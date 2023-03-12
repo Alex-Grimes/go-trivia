@@ -12,9 +12,5 @@ func main() {
 
 	setupRoutes(app)
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, Go-Trivia!")
-	})
-
 	app.Listen(":3000")
 }
