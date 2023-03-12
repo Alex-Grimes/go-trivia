@@ -1,11 +1,12 @@
 package main
 
 import (
+	"github.com/alex-grimes/go-trivia/handlers"
 	"github.com/gofiber/fiber/v2"
 )
 
 func setupRoutes(app *fiber.App) {
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Go Trivia")
-	})
+	app.Get("/", handlers.ListFacts)
+
+	app.Post("/fact", handlers.CreateFact)
 }
